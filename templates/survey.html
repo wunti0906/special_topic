@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>日常節奏與摩擦力調查</title>
+    <style>
+        body { font-family: 'PingFang TC', 'Microsoft JhengHei', sans-serif; background-color: #f0f2f5; color: #333; padding: 20px; line-height: 1.6; }
+        .container { max-width: 650px; margin: 0 auto; background: white; padding: 40px; border-radius: 15px; box-shadow: 0 4px 20px rgba(0,0,0,0.1); }
+        h1 { color: #2c3e50; text-align: center; margin-bottom: 10px; }
+        .intro { text-align: center; color: #7f8c8d; margin-bottom: 30px; font-size: 0.9rem; }
+        .section-title { border-left: 5px solid #3498db; padding-left: 12px; margin: 40px 0 20px; color: #2980b9; font-size: 1.25rem; }
+        .q-box { margin-bottom: 25px; padding: 20px; background: #fdfdfd; border: 1px solid #eee; border-radius: 10px; transition: 0.3s; }
+        .q-box:hover { border-color: #3498db; box-shadow: 0 2px 8px rgba(52,152,219,0.1); }
+        p { font-weight: bold; margin-bottom: 15px; }
+        label { display: block; margin: 10px 0; cursor: pointer; color: #555; }
+        input[type="radio"], input[type="checkbox"] { margin-right: 10px; transform: scale(1.1); }
+        textarea, input[type="text"] { width: 100%; padding: 12px; border: 1px solid #ddd; border-radius: 8px; box-sizing: border-box; margin-top: 5px; font-size: 14px; }
+        textarea { resize: vertical; min-height: 80px; }
+        button { width: 100%; background: #3498db; color: white; padding: 16px; border: none; border-radius: 8px; font-size: 1.1rem; font-weight: bold; cursor: pointer; transition: 0.3s; margin-top: 30px; }
+        button:hover { background: #2980b9; transform: translateY(-2px); }
+        .footer { text-align: center; margin-top: 30px; color: #bdc3c7; font-size: 0.8rem; }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1>日常觀察問卷</h1>
+    <p class="intro">讓我們一起找出生活中的「摩擦力」瞬間</p>
+
+    <form action="/submit" method="POST">
+        
+        <h2 class="section-title">第二部分：日常節奏與摩擦力</h2>
+
+        <div class="q-box">
+            <p>1. 在一天當中，哪一個時段最讓你感到焦慮或疲憊？</p>
+            <label><input type="radio" name="Q1" value="A." required> A. 起床準備出門時</label>
+            <label><input type="radio" name="Q1" value="B."> B. 通勤/移動途中</label>
+            <label><input type="radio" name="Q1" value="C."> C. 剛進入工作/學習狀態時</label>
+            <label><input type="radio" name="Q1" value="D."> D. 午休或短暫空檔</label>
+            <label><input type="radio" name="Q1" value="E."> E. 下班/下課後的個人時間</label>
+            <label><input type="radio" name="Q1" value="F."> F. 睡前準備休息時</label>
+        </div>
+
+        <div class="q-box">
+            <p>2. 承上題，原因通常是什麼？（可複選）</p>
+            <label><input type="checkbox" name="Q2" value="A."> A. 瑣事太多，感覺時間不夠用</label>
+            <label><input type="checkbox" name="Q2" value="B."> B. 需要處理重複性高的機械化任務</label>
+            <label><input type="checkbox" name="Q2" value="C."> C. 資訊量太大，不知道從何處理起</label>
+            <label><input type="checkbox" name="Q2" value="D."> D. 純粹感到提不起勁，缺乏動力</label>
+            <label><input type="checkbox" name="Q2" value="E."> E. 與人溝通或協作不順利</label>
+            <input type="text" name="Q2_Other" placeholder="其他原因...">
+        </div>
+
+        <div class="q-box">
+            <p>3. 如果現在有一小時的空檔，且完全不用擔心工作/學業，你第一直覺想做什麼？</p>
+            <textarea name="Q3" placeholder="例如：睡覺、運動、看劇..."></textarea>
+        </div>
+
+        <div class="q-box">
+            <p>4. 回想這兩天，有沒有哪個瞬間讓你心裡想著「好煩」？</p>
+            <textarea name="Q4" placeholder="請描述具體情境，例如：排隊、找鑰匙、回訊息..."></textarea>
+        </div>
+
+        <div class="q-box">
+            <p>5. 在下列情境中，哪一個最讓你感到「心累」？</p>
+            <label><input type="radio" name="Q5" value="A." required> A. 在訊息中找一個幾天前的連結或重要資訊</label>
+            <label><input type="radio" name="Q5" value="B."> B. 發現今天想做的事，一件都沒達成</label>
+            <label><input type="radio" name="Q5" value="C."> C. 面對很多選擇，卻遲遲無法做決定</label>
+        </div>
+
+        <div class="q-box">
+            <p>6. 你手機裡的「相簿」或「備忘錄」通常是用來做什麼的？</p>
+            <textarea name="Q6" rows="2"></textarea>
+        </div>
+
+        <div class="q-box">
+            <p>7. 有沒有什麼事情是你覺得「很重要，但每次想起來都已經太遲了」？</p>
+            <input type="text" name="Q7" placeholder="例如：生日、優惠券過期、該繳的帳單">
+        </div>
+
+        <div class="q-box">
+            <p>8. 在與人溝通時，你最討厭哪種情況？</p>
+            <input type="text" name="Q8" placeholder="例如：重複解釋一樣的話、沒重點">
+        </div>
+
+        <h2 class="section-title">第四部分：理想的狀態</h2>
+
+        <div class="q-box">
+            <p>9. 如果可以花錢買到一種「超能力」，你最想買哪一個？</p>
+            <label><input type="radio" name="Q9" value="A." required> A. 瞬間把亂七八糟的東西歸類好</label>
+            <label><input type="radio" name="Q9" value="B."> B. 每天自動多出 2 小時的自由時間</label>
+            <label><input type="radio" name="Q9" value="C."> C. 能夠一眼看穿事情的優先順序</label>
+            <label><input type="radio" name="Q9" value="D."> D. 永遠不會忘記任何細節的記憶力</label>
+        </div>
+
+        <div class="q-box">
+            <p>10. 最近一次讓你覺得「心情很好、很順暢」的小事是什麼？</p>
+            <textarea name="Q10"></textarea>
+        </div>
+
+        <button type="submit">確認提交問卷結果</button>
+    </form>
+</div>
+
+</body>
+</html>
